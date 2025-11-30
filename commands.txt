@@ -1,0 +1,264 @@
+python -m venv .venv; .\\.venv\\Scripts\\Activate.ps1
+pip install -r .\requirements.txt
+
+#
+cd c:\Users\prajw\Downloads\skillbridge
+.\venv\Scripts\Activate.ps1
+#
+conda activate skillbridge
+
+
+# Stop the running Flask process (if any) via Ctrl+C in its terminal, or find + stop process:
+Get-NetTcpConnection -LocalPort 5000 | Select-Object -ExpandProperty OwningProcess | ForEach-Object { Stop-Process -Id $_ -Force }
+
+# Start app
+python .\app.py
+
+
+# Load homepage
+curl http://127.0.0.1:5000/
+
+# Check static resources (should return 200)
+curl http://127.0.0.1:5000/style.css
+curl http://127.0.0.1:5000/script.js
+
+
+
+Dry-run the seeder (no DB connection):
+python .\seeder.py --count 500
+
+# ensure .env is set, then:
+python .\seeder.py --count 500 --commit
+
+
+# In a PowerShell terminal (app will stay running):
+C:/Users/prajw/anaconda3/Scripts/conda.exe run -p C:\Users\prajw\anaconda3 --no-capture-output python .\app.py
+
+
+Test endpoints 
+# Health check
+curl.exe http://localhost:5000/api/health
+
+# Status
+curl.exe http://localhost:5000/api/status
+
+# Register (example)
+curl.exe -X POST http://localhost:5000/api/auth/register `
+  -ContentType "application/json" `
+  -Body '{"email":"test@example.com","password":"secret123"}'
+
+# Login (example)
+curl.exe -X POST http://localhost:5000/api/auth/login `
+  -ContentType "application/json" `
+  -Body '{"email":"test@example.com","password":"secret123"}'
+
+
+
+
+  C:/Users/prajw/anaconda3/Scripts/conda.exe run -p C:\Users\prajw\anaconda3 --no-capture-output python .\app.py
+
+  http://localhost:5000 (frontend)
+
+  http://localhost:5000
+
+
+
+
+
+
+
+
+
+
+
+  1. Initial Setup & Environment
+
+  # Navigate to project directory
+cd c:\Users\prajw\Downloads\skillbridge
+
+# Create a Python virtual environment (optional, but recommended)
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+# Or use Conda (if you prefer)
+conda create -n skillbridge python=3.12
+conda activate skillbridge
+
+2. Install Dependencies
+
+# Install all required packages
+pip install -r requirements.txt
+
+# Or with specific versions if needed
+pip install flask flask-cors python-dotenv google-generativeai langchain pymongo mongoengine requests pandas numpy python-json-logger opentelemetry-api opentelemetry-sdk opentelemetry-exporter-jaeger opentelemetry-instrumentation-flask opentelemetry-instrumentation-requests opentelemetry-exporter-prometheus prometheus-client flask-jwt-extended passlib bcrypt deprecated flask-session pydantic-settings
+
+
+3. Environment Configuration
+# Create .env file in the project root with these variables:
+# Example .env content:
+# FLASK_HOST=0.0.0.0
+# FLASK_PORT=5000
+# FLASK_DEBUG=True
+# MONGODB_URI=your_mongodb_connection_string
+# GEMINI_API_KEY=your_gemini_api_key
+# JWT_SECRET_KEY=your_secret_key
+# JAEGER_HOST=localhost
+# JAEGER_PORT=6831
+
+
+
+4. Database Seeding
+
+# Dry-run (preview resources without saving to DB)
+python .\seeder.py
+
+# Seed 500 resources into MongoDB
+python .\seeder.py --count 500 --commit
+
+# Custom count
+python .\seeder.py --count 1000 --commit
+
+
+5. Run the Application
+
+# Start the Flask app (development mode with auto-reload)
+python .\app.py
+
+# Or with Flask CLI
+flask run
+
+# Run on specific host:port
+python .\app.py --host 0.0.0.0 --port 5000
+
+
+6. Test API Endpoints
+
+# Run endpoint verification tests
+python .\verify_endpoints.py
+
+# Or run comprehensive API tests
+python .\test_api.py
+
+# Test individual endpoints with curl
+curl http://localhost:5000/
+curl http://localhost:5000/api/health
+curl http://localhost:5000/api/status
+
+
+7. Docker Deployment 
+
+# Build and run with Docker Compose
+docker compose up --build
+
+# Run in detached mode (background)
+docker compose up -d
+
+# Stop containers
+docker compose down
+
+# View logs
+docker compose logs -f app
+docker compose logs -f jaeger
+
+8. Access Points
+
+Frontend:        http://localhost:5000/
+API Health:      http://localhost:5000/api/health
+API Status:      http://localhost:5000/api/status
+Register User:   POST http://localhost:5000/api/auth/register
+Login User:      POST http://localhost:5000/api/auth/login
+Jaeger UI:       http://localhost:16686 (if using Docker)
+Prometheus:      http://localhost:9090 (if using Docker)
+
+
+9. Common Development Commands
+
+# Format code
+python -m black *.py
+
+# Check for syntax errors
+python -m py_compile app.py config.py database.py auth.py
+
+# Run specific test
+python .\verify_endpoints.py
+
+# View app logs in real-time (if running)
+Get-Content app.log -Wait
+
+
+10. Troubleshooting Commands
+
+# Check if Flask is running on port 5000
+Get-NetTcpConnection -LocalPort 5000
+
+# Kill process using port 5000 (if needed)
+Stop-Process -Id (Get-NetTcpConnection -LocalPort 5000).OwningProcess -Force
+
+# Check Python version
+python --version
+
+# List installed packages
+pip list
+
+# Verify .env is loaded
+python -c "from config import settings; print(settings.flask_host, settings.flask_port)"
+
+Quick Start (One-liner)
+
+# Full setup and run
+pip install -r requirements.txt; python .\seeder.py --count 500 --commit; python .\app.py
+
+
+
+# Start or restart the app
+cd c:\Users\prajw\Downloads\skillbridge
+python .\app.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

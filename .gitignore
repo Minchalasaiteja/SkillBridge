@@ -1,0 +1,56 @@
+.env
+# Ignore deliverables/deployment and index docs specified by the user
+DElIVERABLES.md
+DELIVERABLES.MD
+deliverables.md
+deeliverables.md
+DEPLOYMENT.md
+deployment.md
+Index.md
+INDEX.md
+index.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+ENV/
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local secrets
+*.pem
+*.key
+
+# Environment files
+.env.local
+.env.*
+
+# Docker
+docker-compose.override.yml
+
+# Pytest
+htmlcov/
+.pytest_cache/
+
+# Others
+node_modules/
+*.sqlite3
+
+# Ignore any files containing the word "secret" in the filename
+*secret*
+.env
+deliverables.md
+deployment.md
+index.md

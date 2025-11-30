@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBridge - AI-Powered Career Pathways</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle background -->
+    <div id="particles-js"></div>
+    
+    <!-- Main container -->
+    <div class="main-container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <div class="logo">
+                    <span class="logo-icon">🚀</span>
+                    <span class="logo-text">SkillBridge</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link active" data-section="home">Home</a>
+                    <a href="#pathways" class="nav-link" data-section="pathways">Pathways</a>
+                    <a href="#features" class="nav-link" data-section="features">Features</a>
+                    <a href="#about" class="nav-link" data-section="about">About</a>
+                </div>
+                <button class="theme-toggle" id="theme-toggle">
+                    <span>🌙</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="text-gradient">Your AI-Powered</span>
+                        <span class="text-gradient" style="animation-delay: 0.1s">Career Companion</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Unlock your potential with personalized learning pathways powered by advanced AI agents
+                    </p>
+                    <button class="cta-button" onclick="document.querySelector('#form-section').scrollIntoView({behavior: 'smooth'})">
+                        Start Your Journey
+                    </button>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <div class="card-icon">📊</div>
+                        <p>Data Science</p>
+                    </div>
+                    <div class="floating-card card-2">
+                        <div class="card-icon">💻</div>
+                        <p>Web Dev</p>
+                    </div>
+                    <div class="floating-card card-3">
+                        <div class="card-icon">☁️</div>
+                        <p>Cloud Eng</p>
+                    </div>
+                    <div class="floating-card card-4">
+                        <div class="card-icon">📱</div>
+                        <p>Mobile Dev</p>
+                    </div>
+                    <div class="floating-card card-5">
+                        <div class="card-icon">🔒</div>
+                        <p>Cybersecurity</p>
+                    </div>
+                    <div class="floating-card card-6">
+                        <div class="card-icon">🗄️</div>
+                        <p>Data Eng</p>
+                    </div>
+                    <div class="floating-card card-7">
+                        <div class="card-icon">📦</div>
+                        <p>Product Mgmt</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form-section" id="form-section">
+            <div class="section-container">
+                <h2 class="section-title">Design Your Learning Path</h2>
+                <p class="section-subtitle">Tell us about your goals and let our AI agents create a personalized roadmap</p>
+                
+                <div class="form-wrapper">
+                    <form id="pathway-form" class="form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="career-goal" class="form-label">Career Goal</label>
+                                <select id="career-goal" name="career_goal" class="form-input select-input" required>
+                                    <option value="">Select your goal...</option>
+                                    <option value="Data Scientist">📊 Data Scientist</option>
+                                    <option value="Data Analyst">📈 Data Analyst</option>
+                                    <option value="Web Developer">💻 Web Developer</option>
+                                    <option value="Cloud Engineer">☁️ Cloud Engineer</option>
+                                    <option value="AI/ML Engineer">🤖 AI/ML Engineer</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time-available" class="form-label">Hours per Week</label>
+                                <div class="slider-container">
+                                    <input type="range" id="time-available" name="time_available_weekly" 
+                                           min="1" max="40" value="5" class="form-slider">
+                                    <span class="slider-value" id="slider-value">5</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="learning-style" class="form-label">Learning Style</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="learning_style" value="Video lectures" checked>
+                                        <span>Video Lectures</span>
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="learning_style" value="Project-based" checked>
+                                        <span>Projects</span>
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="learning_style" value="Interactive">
+                                        <span>Interactive</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="constraints" class="form-label">Constraints</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="constraints" value="No cost" checked>
+                                        <span>Free Content</span>
+                                    </label>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="constraints" value="Flexible schedule" checked>
+                                        <span>Flexible</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            <span class="button-text">Generate Pathway</span>
+                            <span class="button-icon">→</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="results-section" style="display: none;">
+            <div class="section-container">
+                <div class="results-container" id="results-container">
+                    <!-- Results will be displayed here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Pathways Section -->
+        <section class="pathways-section" id="pathways">
+            <div class="section-container">
+                <h2 class="section-title">Your Saved Pathways</h2>
+                <p class="section-subtitle">View recent pathways generated by you or the demo (requires login for private pathways).</p>
+
+                <div class="pathways-controls" style="text-align:center; margin-bottom:1.5rem;">
+                    <button id="load-pathways" class="cta-button" style="padding:0.75rem 1.25rem;">Load Recent Pathways</button>
+                </div>
+
+                <div id="pathways-list" class="pathways-list">
+                    <!-- Recent pathways will be rendered here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <div class="section-container">
+                <h2 class="section-title">Powered by Advanced AI Agents</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Goal Analysis</h3>
+                        <p>Our Goal Analyzer agent breaks down your career aspirations into actionable skills and milestones</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Resource Research</h3>
+                        <p>Resource Researcher finds the best courses and materials in parallel for maximum efficiency</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Roadmap Synthesis</h3>
+                        <p>Roadmap Synthesizer creates optimized learning paths with iterative quality evaluation</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h3>Data Persistence</h3>
+                        <p>All your progress is saved to MongoDB for long-term learning journey tracking</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Job Market Insights</h3>
+                        <p>Real-time market trends and salary expectations powered by Gemini AI</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔐</div>
+                        <h3>Enterprise Ready</h3>
+                        <p>Logging, tracing, and metrics for complete observability and monitoring</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="section-container">
+                <h2 class="section-title">About SkillBridge</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Agents Intensive Capstone Project</h3>
+                        <p>
+                            SkillBridge is a sophisticated multi-agent AI system designed to tackle real-world challenges 
+                            in career development and lifelong learning. Leveraging Google's Gemini API and advanced agent orchestration, 
+                            SkillBridge provides personalized learning pathways tailored to individual career goals and constraints.
+                        </p>
+                        <p>
+                            This enterprise-grade solution demonstrates best practices in multi-agent system architecture, 
+                            including parallel execution, iterative evaluation, session management, and comprehensive observability.
+                        </p>
+                        <div class="tech-stack">
+                            <h4>Built With:</h4>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">Google Gemini</span>
+                                <span class="tech-tag">Async/Concurrency</span>
+                                <span class="tech-tag">OpenTelemetry</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy;  SkillBridge. Agents Intensive Capstone Project.</p>
+                <p>Empowering careers through intelligent learning paths.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

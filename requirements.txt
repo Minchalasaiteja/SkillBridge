@@ -1,0 +1,54 @@
+# Core Flask Setup
+flask
+flask-cors
+python-dotenv
+
+# AI/LLM Integration
+google-generativeai
+langchain
+
+# Database
+pymongo
+mongoengine
+
+# API & HTTP
+requests
+
+# Data Processing
+pandas
+numpy
+
+# Observability & Logging
+python-json-logger
+opentelemetry-api
+opentelemetry-sdk
+opentelemetry-exporter-jaeger
+opentelemetry-instrumentation-flask
+opentelemetry-instrumentation-requests
+opentelemetry-exporter-prometheus
+prometheus-client
+flask-jwt-extended
+PyJWT
+passlib[bcrypt]
+Deprecated
+
+# Async Support
+asyncio
+aiohttp
+
+# Data Validation
+pydantic
+pydantic-settings
+
+# Session Management
+flask-session
+
+# Utilities
+typing-extensions
+python-dateutil
+
+# Development
+pytest
+pytest-asyncio
+black
+flake8
